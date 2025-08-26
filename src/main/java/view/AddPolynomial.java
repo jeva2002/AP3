@@ -11,13 +11,13 @@ import model.Polynomial;
 
 import java.io.IOException;
 
-@WebServlet(name = "init", value = "/add-polynomial")
+@WebServlet(name = "add-polynomial", value = "/add-polynomial")
 public class AddPolynomial extends HttpServlet {
     public void init() {}
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         ServletContext context = request.getServletContext();
-        String polynomial = request.getParameter("polynomial");
+        String polynomial = request.getParameter("polinomio");
 
         Polynomial form = (Polynomial) context.getAttribute("Form");
 
@@ -29,6 +29,6 @@ public class AddPolynomial extends HttpServlet {
         context.setAttribute("Form2", form2);
         context.setAttribute("Form3", form3);
 
-        response.sendRedirect("describe.jsp");
+        response.sendRedirect("added-polynomial.jsp");
     }
 }

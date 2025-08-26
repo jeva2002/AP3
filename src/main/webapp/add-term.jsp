@@ -1,4 +1,4 @@
-<%--
+<%@ page import="model.Polynomial" %><%--
   Created by IntelliJ IDEA.
   User: jvillegas
   Date: 25/08/2025
@@ -6,6 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    Polynomial form = (Polynomial) application.getAttribute("Form");
+%>
 <html>
 <head>
     <meta charset="ISO-8859-1">

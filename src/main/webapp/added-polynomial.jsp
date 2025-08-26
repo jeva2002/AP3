@@ -7,7 +7,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    Polynomial form = (Polynomial) application.getAttribute("Form");
+    Polynomial form1 = (Polynomial) application.getAttribute("Form");
+    Polynomial form2 = (Polynomial) application.getAttribute("Form2");
+    Polynomial form3 = (Polynomial) application.getAttribute("Form3");
 %>
 <html>
 <head>
@@ -38,21 +40,16 @@
         </div>
     </div>
 </nav>
-<form class="container-fluid px-5" action="<%= request.getContextPath() %>/add-polynomial" method="post">
+<div class="container-fluid">
     <p class="row align-items-center">
-        <b>Polinomio: </b><span><%= form.showPolynomial() %></span>
+        <b>Polinomio 1: </b><span><%= form1.showPolynomial() %></span>
     </p>
-
-    <div class="row mt-2">
-        <div class="col">
-            <label for="polinomio" class="form-label"> Polinomio </label>
-            <input class="form-control" type="text" id="polinomio" name="polinomio" required/>
-        </div>
-    </div>
-
-    <div class="row mt-4">
-        <button class="btn btn-primary" type="submit" value="sumar">Sumar</button>
-    </div>
-</form>
+    <p class="row align-items-center">
+        <b>Polinomio 2: </b><span><%= form2.showPolynomial() %></span>
+    </p>
+    <p class="row align-items-center">
+        <b>Resultado: </b><span><%= form3.showPolynomial() %></span>
+    </p>
+</div>
 </body>
 </html>
