@@ -3,10 +3,12 @@ package model;
 public class Form1 extends Polynomial<Form1, int[]> {
     public Form1(int degree, int[] preparedPolynomial) {
         super(degree, preparedPolynomial);
+        super.form = "form1";
     }
 
     protected Form1(int DU, int degree, int[] structure) {
         super(DU, degree, structure);
+        super.form = "form1";
     }
 
     @Override

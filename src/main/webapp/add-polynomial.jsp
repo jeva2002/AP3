@@ -34,6 +34,21 @@
             </div>
         </div>
     </div>
+    <form class="container-fluid px-5" action="<%= request.getContextPath() %>/add-polynomial" method="post">
+        <div class="row">
+            <legend>Escriba un polinomio y seleccione una de las formas para iniciar</legend>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                <label for="polinomio" class="form-label"> Polinomio </label>
+                <input class="form-control" type="text" id="polinomio" name="polinomio" required/>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <button class="btn btn-primary" type="submit" value="Empezar Cálculo">Empezar Cálculo</button>
+        </div>
+    </form>
 </nav>
 </body>
 </html>

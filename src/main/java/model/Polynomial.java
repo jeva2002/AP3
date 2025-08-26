@@ -4,6 +4,7 @@ public abstract class Polynomial<Form, Entry> {
     protected int degree;
     protected int DU;
     protected Entry structure;
+    protected String form;
 
     public Polynomial(int degree, int[] preparedPolynomial) {
         this.DU = degree + 1;
@@ -53,5 +54,9 @@ public abstract class Polynomial<Form, Entry> {
 
     public int getDegree() {
         return degree;
+    }
+
+    public String getFormName() {
+        return form;
     }
 }
