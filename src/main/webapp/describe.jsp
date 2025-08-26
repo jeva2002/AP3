@@ -39,7 +39,7 @@
     </div>
 </nav>
 <div class="container-fluid">
-    <p class="row align-items-center fs-1">
+    <p class="row align-items-center">
         <b>Polinomio: </b><span><%= form.showPolynomial() %></span>
     </p>
     <p class="row align-items-center">

@@ -1,4 +1,4 @@
-<%--
+<%@ page import="model.Polynomial" %><%--
   Created by IntelliJ IDEA.
   User: jvillegas
   Date: 25/08/2025
@@ -6,6 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    Polynomial form = (Polynomial) application.getAttribute("Form");
+%>
 <html>
 <head>
     <meta charset="ISO-8859-1">
@@ -35,5 +38,21 @@
         </div>
     </div>
 </nav>
+<form class="container-fluid px-5" action="<%= request.getContextPath() %>/multiply-polynomial" method="post">
+    <p class="row align-items-center">
+        <b>Polinomio: </b><span><%= form.showPolynomial() %></span>
+    </p>
+
+    <div class="row mt-2">
+        <div class="col">
+            <label for="polinomio" class="form-label"> Polinomio </label>
+            <input class="form-control" type="text" id="polinomio" name="polinomio" required/>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <button class="btn btn-primary" type="submit" value="multiply">Multiplicar</button>
+    </div>
+</form>
 </body>
 </html>
