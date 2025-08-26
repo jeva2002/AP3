@@ -97,10 +97,10 @@ public class Form1 extends Polynomial<Form1, int[]> {
 
     @Override
     public String showForm() {
-        StringBuilder form = new StringBuilder("Grado: " + structure[0] + "\n");
+        StringBuilder form = new StringBuilder("Grado: " + structure[0] + "<br>");
 
         for (int i = 1; i <= super.DU; i++) {
-            form.append("Coeficiente: ").append(structure[i]).append(", Exponente: ").append(DU - i).append("\n");
+            form.append("Coeficiente: ").append(structure[i]).append(", Exponente: ").append(DU - i).append("<br>");
         }
 
         return form.toString();
@@ -108,7 +108,7 @@ public class Form1 extends Polynomial<Form1, int[]> {
 
     @Override
     public String showPolynomial() {
-        StringBuilder polynomial = new StringBuilder("Polinomio: ");
+        StringBuilder polynomial = new StringBuilder();
         String exp, concat, variable = "x";
 
         for (int i = 1; i <= super.DU; i++) {

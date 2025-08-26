@@ -1,19 +1,17 @@
 package view;
 
 import controller.FormInitializer;
-import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
-@WebServlet(name = "intro", value = "/menu")
-public class Menu extends HttpServlet {
+@WebServlet(name = "intro", value = "/init")
+public class Initial extends HttpServlet {
 
 
     public void init() {
@@ -25,12 +23,13 @@ public class Menu extends HttpServlet {
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        HttpSession session = request.getSession();
         String polinomio = request.getParameter("polinomio");
         String form = request.getParameter("form");
+        ServletContext context = request.getServletContext();
 
         FormInitializer initializer = new FormInitializer(form, polinomio);
-        session.setAttribute("Form", initializer.initForm());
+
+        context.setAttribute("Form", initializer.initForm());
 
         response.sendRedirect("describe.jsp");
     }

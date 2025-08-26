@@ -17,7 +17,7 @@
             <h1>Bienvenido a la calculadora de Polinomios</h1>
         </div>
     </div>
-    <form class="container-fluid px-5" action="<%= request.getContextPath() %>/menu" method="post">
+    <form class="container-fluid px-5" action="<%= request.getContextPath() %>/init" method="post">
         <div class="row">
             <legend>Escriba un polinomio y seleccione una de las formas para iniciar</legend>
         </div>

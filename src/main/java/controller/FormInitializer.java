@@ -17,7 +17,7 @@ public class FormInitializer {
 
     public Polynomial initForm() {
         Polynomial result = null;
-        PreparedPolynomial prepol =  new PreparedPolynomial(form);
+        PreparedPolynomial prepol =  new PreparedPolynomial(this.polynomial);
 
         result = switch (this.form) {
             case "form1" -> new Form1(prepol.getDegree(), prepol.getPolynomial());
