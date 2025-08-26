@@ -38,5 +38,25 @@
         </div>
     </div>
 </nav>
+<form class="container-fluid px-5" action="<%= request.getContextPath() %>/add-term" method="post">
+    <p class="row align-items-center">
+        <b>Polinomio: </b><span><%= form.showPolynomial() %></span>
+    </p>
+
+    <div class="row mt-2">
+        <div class="col">
+            <label for="coef" class="form-label"> Coeficiente </label>
+            <input class="form-control" type="number" id="coef" name="coef" required/>
+        </div>
+        <div class="col">
+            <label for="exp" class="form-label"> Exponente </label>
+            <input class="form-control" type="number" id="exp" name="exp" required/>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <button class="btn btn-primary" type="submit" value="insert">Insertar Término</button>
+    </div>
+</form>
 </body>
 </html>
