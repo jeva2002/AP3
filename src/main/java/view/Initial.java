@@ -29,6 +29,7 @@ public class Initial extends HttpServlet {
 
         FormInitializer initializer = new FormInitializer(form, polinomio);
 
+        context.setAttribute("Entry", polinomio);
         context.setAttribute("Form", initializer.initForm());
 
         response.sendRedirect("describe.jsp");

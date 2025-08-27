@@ -15,10 +15,6 @@
 <%@ include file="component/nav.jsp" %>
 <h1 class="container-fluid text-center my-5 ">Eliminar Término</h1>
 <form class="container px-5 fs-5" action="<%= request.getContextPath() %>/delete-term" method="post">
-    <div class="row align-items-center">
-        <p class="col"><b>Forma: </b><%= form.showForm() %></p>
-    </div>
-
     <div class="row mt-2">
         <div class="col">
             <label for="degree" class="form-label"> Exponente del Término </label>
@@ -26,8 +22,12 @@
         </div>
     </div>
 
-    <div class="row mt-4">
+    <div class="row my-4">
         <button class="btn btn-primary" type="submit" value="insert">Eliminar Término</button>
+    </div>
+
+    <div class="row align-items-center">
+        <p class="col"><b>Forma: </b><%= form.showForm() %></p>
     </div>
 </form>
 </body>

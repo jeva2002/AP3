@@ -12,7 +12,7 @@
 </head>
 <body>
 <div>
-    <div class="container text-center my-5 mb-5">
+    <div class="container text-center my-5">
         <div class="row">
             <h1>Bienvenido a la calculadora de Polinomios</h1>
         </div>
@@ -21,7 +21,7 @@
         <div class="row">
             <legend>Escriba un polinomio y seleccione una de las formas para iniciar</legend>
         </div>
-        <div class="row mt-2">
+        <div class="row my-5">
             <div class="col">
                 <label for="polinomio" class="form-label"> Polinomio </label>
                 <input class="form-control" type="text" id="polinomio" name="polinomio" required/>

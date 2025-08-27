@@ -99,10 +99,14 @@ public class Form1 extends Polynomial<Form1, int[]> {
 
     @Override
     public String showForm() {
-        StringBuilder form = new StringBuilder("Grado: " + structure[0] + "<br><ul>");
+        StringBuilder form = new StringBuilder("Grado: " + structure[0] + "<br><ul class=\"list-group list-group-horizontal justify-content-center\">");
 
         for (int i = 1; i <= super.DU; i++) {
-            form.append("<li>").append("Coeficiente: ").append(structure[i]).append(", Exponente: ").append(DU - i).append("</li>");
+            form.append("<li style=\"max-width:200px !important;\" class=\"list-group-item\">").append("Coeficiente: ").append(structure[i]).append(", Exponente: ").append(DU - i).append("</li>");
+
+            if(i % 6 == 0){
+                form.append("</ul><ul class=\"list-group list-group-horizontal justify-content-center\">");
+            }
         }
 
         return form.append("</ul>").toString();

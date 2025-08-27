@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     Polynomial form = (Polynomial) application.getAttribute("Form");
+    String entrada = (String) application.getAttribute("Entry");
 %>
 <html>
 <%@ include file="component/head.jsp" %>
@@ -15,6 +16,9 @@
 <%@ include file="component/nav.jsp" %>
 <h1 class="container-fluid text-center my-5 ">Descripción Polinomio</h1>
 <div class="container fs-5">
+    <div class="row align-items-center">
+        <p class="col"><b>Entrada: </b><%= entrada %></p>
+    </div>
     <div class="row align-items-center">
         <p class="col"><b>Polinomio: </b><%= form.showPolynomial() %></p>
     </div>

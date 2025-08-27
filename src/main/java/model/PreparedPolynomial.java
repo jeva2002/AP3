@@ -71,9 +71,6 @@ public class PreparedPolynomial {
         return degree;
     }
 
-    public String getInput() {
-        return input;
-    }
 
     public int[] getPolynomial() {
         return polynomial;
