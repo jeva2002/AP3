@@ -39,13 +39,21 @@
         </div>
     </div>
 </nav>
-<div class="container-fluid">
+<form class="container-fluid px-5" action="<%= request.getContextPath() %>/eval" method="post">
     <p class="row align-items-center">
         <b>Polinomio: </b><span><%= form.showPolynomial() %></span>
     </p>
-    <p class="row align-items-center">
-        <b>Forma: </b><span><%= form.showForm() %></span>
-    </p>
-</div>
+
+    <div class="row mt-2">
+        <div class="col">
+            <label for="value" class="form-label"> X = </label>
+            <input class="form-control" type="number" id="value" name="value" required/>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <button class="btn btn-primary" type="submit" value="insert">Evaluar Polinomio</button>
+    </div>
+</form>
 </body>
 </html>

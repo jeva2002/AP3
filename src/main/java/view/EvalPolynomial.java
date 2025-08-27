@@ -10,19 +10,22 @@ import model.Polynomial;
 
 import java.io.IOException;
 
-@WebServlet(name = "add-term", value = "/add-term")
-public class AddTerm extends HttpServlet {
+@WebServlet(name = "eval", value = "/eval")
+public class EvalPolynomial extends HttpServlet {
     public void init() {}
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         ServletContext context = request.getServletContext();
-        int exp = Integer.parseInt(request.getParameter("exp"));
-        int coef = Integer.parseInt(request.getParameter("coef"));
+        String value = request.getParameter("value");
 
         Polynomial form = (Polynomial) context.getAttribute("Form");
 
-        form.insertTerm(coef, exp);
+        String evaluation = form.showPolynomial().replace("x", "(" + Integer.parseInt(value) + ")") +
+                " = " +
+                form.eval(Integer.parseInt(value));
 
-        response.sendRedirect("describe.jsp");
+        context.setAttribute("evaluation", evaluation);
+
+        response.sendRedirect("evaluated-polynomial.jsp");
     }
 }

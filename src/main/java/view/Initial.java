@@ -15,6 +15,7 @@ public class Initial extends HttpServlet {
 
 
     public void init() {
+
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -24,6 +25,7 @@ public class Initial extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String polinomio = request.getParameter("polinomio");
         String form = request.getParameter("form");
+        ServletContext context = request.getServletContext();
 
         FormInitializer initializer = new FormInitializer(form, polinomio);
 

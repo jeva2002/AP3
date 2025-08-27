@@ -1,4 +1,4 @@
-<%--
+<%@ page import="model.Polynomial" %><%--
   Created by IntelliJ IDEA.
   User: jvillegas
   Date: 25/08/2025
@@ -6,6 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    Polynomial form = (Polynomial) application.getAttribute("Form");
+%>
 <html>
 <head>
     <meta charset="ISO-8859-1">
@@ -26,6 +29,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/describe.jsp">Descripción</a>
+                <a class="nav-link" href="${pageContext.request.contextPath}/eval-polynomial.jsp">Evaluar</a>
                 <a class="nav-link" href="${pageContext.request.contextPath}/add-polynomial.jsp">Sumar Polinomio</a>
                 <a class="nav-link" href="${pageContext.request.contextPath}/multiply-polynomial.jsp">Multiplicar Polinomio</a>
                 <a class="nav-link" href="${pageContext.request.contextPath}/add-term.jsp">Añadir Término</a>
@@ -35,5 +39,21 @@
         </div>
     </div>
 </nav>
+<form class="container-fluid px-5" action="<%= request.getContextPath() %>/delete-term" method="post">
+    <p class="row align-items-center">
+        <b>Polinomio: </b><span><%= form.showForm() %></span>
+    </p>
+
+    <div class="row mt-2">
+        <div class="col">
+            <label for="degree" class="form-label"> Exponente del Término </label>
+            <input class="form-control" type="number" id="degree" name="degree" required/>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <button class="btn btn-primary" type="submit" value="insert">Eliminar Término</button>
+    </div>
+</form>
 </body>
 </html>

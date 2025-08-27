@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     Polynomial form = (Polynomial) application.getAttribute("Form");
+    String evaluated = (String) application.getAttribute("evaluation");
 %>
 <html>
 <head>
@@ -44,7 +45,7 @@
         <b>Polinomio: </b><span><%= form.showPolynomial() %></span>
     </p>
     <p class="row align-items-center">
-        <b>Forma: </b><span><%= form.showForm() %></span>
+        <b>Solución: </b><span><%= evaluated %></span>
     </p>
 </div>
 </body>
