@@ -3,6 +3,7 @@ package model;
 public class Form1 extends Polynomial<Form1, int[]> {
     public Form1(int degree, int[] preparedPolynomial) {
         super(degree, preparedPolynomial);
+        super.DU = super.degree + 1;
         super.form = "form1";
     }
 

@@ -18,7 +18,7 @@
     <div class="row mt-2">
         <div class="col">
             <label for="degree" class="form-label"> Exponente del Término </label>
-            <input class="form-control" type="number" id="degree" name="degree" required/>
+            <input class="form-control" type="number" id="degree" name="degree" required min="0" max="<%= form.getDegree() %>"/>
         </div>
     </div>
 

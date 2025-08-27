@@ -26,7 +26,7 @@
         </div>
         <div class="col">
             <label for="exp" class="form-label"> Exponente </label>
-            <input class="form-control" type="number" id="exp" name="exp" required/>
+            <input class="form-control" type="number" id="exp" name="exp" required min="0"/>
         </div>
     </div>
 

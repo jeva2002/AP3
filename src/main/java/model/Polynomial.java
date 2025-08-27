@@ -7,7 +7,6 @@ public abstract class Polynomial<Form, Entry> {
     protected String form;
 
     public Polynomial(int degree, int[] preparedPolynomial) {
-        this.DU = degree + 1;
         this.degree = degree;
 
         generateForm(preparedPolynomial);
