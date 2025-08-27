@@ -12,12 +12,12 @@
 </head>
 <body>
 <div>
-    <div class="container-fluid text-center mt-5 mb-5">
+    <div class="container text-center my-5 mb-5">
         <div class="row">
             <h1>Bienvenido a la calculadora de Polinomios</h1>
         </div>
     </div>
-    <form class="container-fluid px-5" action="<%= request.getContextPath() %>/initial" method="post">
+    <form class="container px-5 fs-5" action="<%= request.getContextPath() %>/initial" method="post">
         <div class="row">
             <legend>Escriba un polinomio y seleccione una de las formas para iniciar</legend>
         </div>

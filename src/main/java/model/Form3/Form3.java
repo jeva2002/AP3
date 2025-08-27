@@ -47,7 +47,7 @@ public class Form3 extends Polynomial<Form3, Form3Node> {
     }
 
     @Override
-    public double eval(int x) {
+    public int eval(int x) {
         return 0;
     }
 

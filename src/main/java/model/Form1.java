@@ -99,13 +99,13 @@ public class Form1 extends Polynomial<Form1, int[]> {
 
     @Override
     public String showForm() {
-        StringBuilder form = new StringBuilder("Grado: " + structure[0] + "<br>");
+        StringBuilder form = new StringBuilder("Grado: " + structure[0] + "<br><ul>");
 
         for (int i = 1; i <= super.DU; i++) {
-            form.append("Coeficiente: ").append(structure[i]).append(", Exponente: ").append(DU - i).append("<br>");
+            form.append("<li>").append("Coeficiente: ").append(structure[i]).append(", Exponente: ").append(DU - i).append("</li>");
         }
 
-        return form.toString();
+        return form.append("</ul>").toString();
     }
 
     @Override
@@ -139,14 +139,14 @@ public class Form1 extends Polynomial<Form1, int[]> {
     }
 
     @Override
-    public double eval(int x) {
+    public int eval(int x) {
         int coef, exp;
-        double res = 0;
+        int res = 0;
 
         for (int i = 1; i <= super.DU; i++) {
             coef = structure[i];
             exp = super.DU - i;
-            res = res + coef * Math.pow(x, exp);
+            res = (int) (res + coef * Math.pow(x, exp));
         }
 
         return res;

@@ -44,7 +44,7 @@ public class Form2  extends Polynomial<Form2, int[]> {
     }
 
     @Override
-    public double eval(int x) {
+    public int eval(int x) {
         return 0;
     }
 

@@ -38,7 +38,7 @@ public abstract class Polynomial<Form, Entry> {
 
     public abstract String showPolynomial();
 
-    public abstract double eval(int x);
+    public abstract int eval(int x);
 
     public abstract Form addPolynomial(Form polynomialB);
 

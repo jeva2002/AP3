@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class PreparedPolynomial {
@@ -41,25 +42,25 @@ public class PreparedPolynomial {
             else
                 exp = 0;
 
-            polynomial[exp] = polynomial[exp] + coef;
+            polynomial[exp] += coef;
         }
     }
 
     private int _getDegree() {
         int majorDegree = 0;
         int exp;
+        String[] polynomial, term;
 
         if(!input.contains("^")){
             if(input.contains("x"))
                 majorDegree = 1;
         } else {
-            for (int i = 0; i < input.length(); i++) {
-                if(input.charAt(i) == '^'){
-                    exp = Character.getNumericValue(input.charAt(i + 1));
-                    if(exp > majorDegree){
-                        majorDegree = exp;
-                    }
-                }
+            polynomial = input.split("\\+");
+
+            for (int i = 0; i < polynomial.length; i++) {
+                term = polynomial[i].split("\\^");
+
+                if(term.length == 2 && Integer.parseInt(term[1]) > majorDegree) majorDegree = Integer.parseInt(term[1]);
             }
         }
 
