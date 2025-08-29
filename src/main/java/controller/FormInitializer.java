@@ -11,13 +11,13 @@ public class FormInitializer {
     String polynomial;
 
     public FormInitializer(String form, String polynomial) {
-        this.form =  form;
+        this.form = form;
         this.polynomial = polynomial;
     }
 
     public Polynomial initForm() {
         Polynomial result = null;
-        PreparedPolynomial prepol =  new PreparedPolynomial(this.polynomial);
+        PreparedPolynomial prepol = new PreparedPolynomial(this.polynomial);
 
         result = switch (this.form) {
             case "form1" -> new Form1(prepol.getDegree(), prepol.getPolynomial());

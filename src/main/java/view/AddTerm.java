@@ -12,7 +12,8 @@ import java.io.IOException;
 
 @WebServlet(name = "add-term", value = "/add-term")
 public class AddTerm extends HttpServlet {
-    public void init() {}
+    public void init() {
+    }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         ServletContext context = request.getServletContext();

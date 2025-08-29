@@ -3,7 +3,6 @@ package model;
 public class Form1 extends Polynomial<Form1, int[]> {
     public Form1(int degree, int[] preparedPolynomial) {
         super(degree, preparedPolynomial);
-        super.DU = super.degree + 1;
         super.form = "form1";
     }
 
@@ -14,6 +13,7 @@ public class Form1 extends Polynomial<Form1, int[]> {
 
     @Override
     protected void generateForm(int[] preparedPolynomial) {
+        super.DU = super.degree + 1;
         structure = new int[super.DU + 1];
         structure[0] = super.degree;
 
@@ -98,12 +98,12 @@ public class Form1 extends Polynomial<Form1, int[]> {
 
     @Override
     public String showForm() {
-        StringBuilder form = new StringBuilder("Grado: " + structure[0] + "<br><ul class=\"list-group list-group-horizontal justify-content-center\">");
+        StringBuilder form = new StringBuilder(" 1 <br> <b>DU (Grado):</b> " + structure[0] + "<br><ul class=\"list-group list-group-horizontal justify-content-center\">");
 
         for (int i = 1; i <= super.DU; i++) {
-            form.append("<li style=\"max-width:200px !important;\" class=\"list-group-item\">").append("Coeficiente: ").append(structure[i]).append(", Exponente: ").append(DU - i).append("</li>");
+            form.append("<li style=\"max-width:200px !important;\" class=\"list-group-item\">").append("<b>Coeficiente: </b>").append(structure[i]).append(", <b>Exponente: </b>").append(DU - i).append("</li>");
 
-            if(i % 6 == 0){
+            if (i % 4 == 0) {
                 form.append("</ul><ul class=\"list-group list-group-horizontal justify-content-center\">");
             }
         }

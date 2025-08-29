@@ -13,7 +13,8 @@ import java.io.IOException;
 
 @WebServlet(name = "add-polynomial", value = "/add-polynomial")
 public class AddPolynomial extends HttpServlet {
-    public void init() {}
+    public void init() {
+    }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         ServletContext context = request.getServletContext();
