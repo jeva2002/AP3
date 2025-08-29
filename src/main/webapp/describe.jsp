@@ -17,10 +17,10 @@
 <h1 class="container-fluid text-center my-5 ">Descripción Polinomio</h1>
 <div class="container fs-5">
     <div class="row align-items-center">
-        <p class="col"><b>Entrada: </b><%= entrada %></p>
+        <p class="col"><b>Polinomio Inicial: </b><%= entrada %></p>
     </div>
     <div class="row align-items-center">
-        <p class="col"><b>Polinomio: </b><%= form.showPolynomial() %></p>
+        <p class="col"><b>Polinomio Actual: </b><%= form.showPolynomial() %></p>
     </div>
     <div class="row align-items-center">
         <p class="col"><b>Forma: </b><span><%= form.showForm() %></span></p>

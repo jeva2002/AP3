@@ -24,7 +24,7 @@ public class Form1 extends Polynomial<Form1, int[]> {
 
     @Override
     protected void adjust() {
-        if (structure[1] == 0) {
+          if (structure[1] == 0) {
             int counter = 0;
 
             for (int i = 1; i <= super.DU; i++) {
@@ -62,8 +62,11 @@ public class Form1 extends Polynomial<Form1, int[]> {
         int newDU, degree;
         int[] newVector;
 
-        if (structure[0] >= exp) {
+        if(structure[0] >= exp){
             structure[super.DU - exp] += coef;
+
+            adjust();
+            resize();
         } else {
             newDU = exp + 1;
             newVector = new int[newDU + 1];
@@ -77,6 +80,8 @@ public class Form1 extends Polynomial<Form1, int[]> {
                 newVector[newDU - degree] = structure[i];
             }
 
+            super.degree = exp;
+            super.DU = newDU;
             structure = newVector;
         }
 
