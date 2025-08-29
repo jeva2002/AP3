@@ -67,32 +67,38 @@ public class Form2 extends Polynomial<Form2, int[]> {
 
     @Override
     public void insertTerm(int coef, int exp) {
-        int position = 0;
         int[] newPolynomial;
+        boolean hasTerm = false, addedTerm = false;
+        int newDU, k = 2, j = 2;
 
-        for (int i = 2; i <= super.DU; i = i + 2) {
-            if (structure[i] == exp) {
-                position = i;
-                structure[i - 1] += coef;
+        for (int i = 2; i <= super.DU; i += 2) {
+            if (exp == super.structure[i]) {
+                super.structure[i - 1] += coef;
+                hasTerm = true;
+                break;
             }
         }
 
-        if (position != 0) {
-            super.DU = super.DU + 3;
-            newPolynomial = new int[super.DU];
+        if(!hasTerm){
+            newDU = super.DU + 2;
+            newPolynomial = new int[newDU + 1];
 
-            for (int i = 2; i <= super.DU; i += 2) {
-                if (structure[i] == exp) {
-                    newPolynomial[i - 1] = coef;
-                    newPolynomial[i] = exp;
-
-                    i += 2;
+            while (j <= super.DU) {
+                if(!addedTerm && exp > super.structure[j]){
+                    newPolynomial[k] = exp;
+                    newPolynomial[k - 1] = coef;
+                    k += 2;
+                    addedTerm = true;
                 }
 
-                newPolynomial[i - 1] = structure[i - 1];
-                newPolynomial[i] = structure[i];
+                newPolynomial[k] = super.structure[j];
+                newPolynomial[k - 1] = super.structure[j - 1];
+                j += 2;
+                k += 2;
             }
 
+            newPolynomial[0] = structure[0] + 1;
+            super.DU = newDU;
             structure = newPolynomial;
         }
 
@@ -116,7 +122,7 @@ public class Form2 extends Polynomial<Form2, int[]> {
     public String showForm() {
         StringBuilder form = new StringBuilder(" 2 <br> <b>DU (Número de Términos):</b> " + structure[0] + "<br><ul class=\"list-group list-group-horizontal justify-content-center\">");
 
-        for (int i = 2; i <= super.DU; i+=2) {
+        for (int i = 2; i <= super.DU; i += 2) {
             form.append("<li style=\"max-width:200px !important;\" class=\"list-group-item\">").append("<b>Coeficiente:</b>  ").append(structure[i - 1]).append(", <b>Exponente:</b>  ").append(structure[i]).append("</li>");
 
             if (i % 4 == 0) {
@@ -139,7 +145,7 @@ public class Form2 extends Polynomial<Form2, int[]> {
             if (super.structure[i] > 1)
                 polynomial.append("^").append(super.structure[i]);
 
-            if(i != super.DU)
+            if (i != super.DU)
                 polynomial.append(" + ");
         }
 
@@ -159,7 +165,7 @@ public class Form2 extends Polynomial<Form2, int[]> {
 
     @Override
     public Form2 addPolynomial(Form2 polynomialB) {
-        int majorDegree, i = 2, j = 2, k = 2;
+        int i = 2, j = 2, k = 2;
         int DUC = (super.structure[0] + polynomialB.structure[0]) * 2;
         int[] vectorA, vectorB, vectorC = new int[DUC + 1];
 
