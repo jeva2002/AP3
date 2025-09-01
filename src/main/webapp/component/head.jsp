@@ -9,9 +9,6 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>Polinomios</title>
-    <link href="./css/bootstrap.css" rel="stylesheet"
-          integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <script src="./js/bootstrap.js"
-            integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-            crossorigin="anonymous"></script>
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <script src="./js/bootstrap.js" type="text/javascript"></script>
 </head>

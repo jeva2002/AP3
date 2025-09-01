@@ -3,12 +3,12 @@ package model;
 public class Form2 extends Polynomial<Form2, int[]> {
     public Form2(int degree, int[] preparedPolynomial) {
         super(degree, preparedPolynomial);
-        super.form = "form2";
+        this.form = "form2";
     }
 
     protected Form2(int DU, int degree, int[] structure) {
         super(DU, degree, structure);
-        super.form = "form2";
+        this.form = "form2";
     }
 
     @Override
@@ -97,6 +97,11 @@ public class Form2 extends Polynomial<Form2, int[]> {
                 k += 2;
             }
 
+            if(!addedTerm){
+                newPolynomial[k] = exp;
+                newPolynomial[k - 1] = coef;
+            }
+
             newPolynomial[0] = structure[0] + 1;
             super.DU = newDU;
             structure = newPolynomial;
@@ -120,10 +125,10 @@ public class Form2 extends Polynomial<Form2, int[]> {
 
     @Override
     public String showForm() {
-        StringBuilder form = new StringBuilder(" 2 <br> <b>DU (Número de Términos):</b> " + structure[0] + "<br><ul class=\"list-group list-group-horizontal justify-content-center\">");
+        StringBuilder form = new StringBuilder(" 2 <br/> <b>DU:</b> " + this.DU + " <br/> <b>Número de Términos:</b> " + structure[0] + "<br/><ul class=\"list-group list-group-horizontal justify-content-center\">");
 
         for (int i = 2; i <= super.DU; i += 2) {
-            form.append("<li style=\"max-width:200px !important;\" class=\"list-group-item\">").append("<b>Coeficiente:</b>  ").append(structure[i - 1]).append(", <b>Exponente:</b>  ").append(structure[i]).append("</li>");
+            form.append("<li style=\"max-width:200px !important;\" class=\"list-group-item m-1\">").append("<b>Coeficiente:</b>  ").append(structure[i - 1]).append(", <b>Exponente:</b>  ").append(structure[i]).append("</li>");
 
             if (i % 4 == 0) {
                 form.append("</ul><ul class=\"list-group list-group-horizontal justify-content-center\">");
@@ -186,7 +191,7 @@ public class Form2 extends Polynomial<Form2, int[]> {
                 j += 2;
             } else {
                 vectorC[k] = vectorA[i];
-                vectorC[k] = vectorA[i - 1] + vectorB[j - 1];
+                vectorC[k - 1] = vectorA[i - 1] + vectorB[j - 1];
                 i += 2;
                 j += 2;
             }
@@ -205,14 +210,44 @@ public class Form2 extends Polynomial<Form2, int[]> {
 
     @Override
     public Form2 multiplyPolynomial(Form2 polynomialB) {
-        return null;
+        int[][] matrix;
+        int[] vectorA, vectorB, vectorC;
+        int m = 0;
+        Form2[] order = orderOperations(polynomialB);
+        Form2 acumForm, auxForm;
+
+        vectorA = order[0].structure;
+        vectorB = order[1].structure;
+
+        matrix = new int[order[1].DU / 2][];
+
+        for (int i = 2; i <= order[1].DU; i += 2) {
+            vectorC = new int[order[0].DU + 1];
+            vectorC[0] = vectorA[0];
+
+            for (int j = 2; j <= order[0].DU; j += 2) {
+                vectorC[j - 1] = vectorA[j - 1] * vectorB[i - 1];
+                vectorC[j] = vectorA[j] + vectorB[i];
+            }
+
+            matrix[m] =  vectorC;
+            m++;
+        }
+
+        acumForm = new Form2(matrix[0][0] * 2, matrix[0][2], matrix[0]);
+        for (int i = 1; i < matrix.length; i++) {
+            auxForm = new Form2(matrix[i][0] * 2, matrix[i][2], matrix[i]);
+            acumForm = acumForm.addPolynomial(auxForm);
+        }
+
+        return acumForm;
     }
 
     @Override
     protected Form2[] orderOperations(Form2 polynomialB) {
         Form2 primary, secondary;
 
-        if (super.structure[super.structure.length - 1] > polynomialB.structure[polynomialB.structure.length - 1]) {
+        if (super.DU > polynomialB.DU) {
             primary = this;
             secondary = polynomialB;
         } else {
