@@ -13,7 +13,7 @@
 <%@ include file="component/head.jsp" %>
 <body>
 <%@ include file="component/nav.jsp" %>
-<h1 class="container-fluid text-center my-5 fs-5 ">Agregar Término</h1>
+<h1 class="container-fluid text-center my-5">Agregar Término</h1>
 <form class="container px-5" action="<%= request.getContextPath() %>/add-term" method="post">
     <div class="row align-items-center fs-5">
         <p class="col"><b>Polinomio: </b><%= form.showPolynomial() %></p>

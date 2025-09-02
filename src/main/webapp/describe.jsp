@@ -16,12 +16,24 @@
 <%@ include file="component/nav.jsp" %>
 <h1 class="container-fluid text-center my-5 ">Descripción Polinomio</h1>
 <div class="container fs-5">
-    <div class="row align-items-center">
-        <p class="col"><b>Polinomio Inicial: </b><%= entrada %></p>
-    </div>
-    <div class="row align-items-center">
-        <p class="col"><b>Polinomio Actual: </b><%= form.showPolynomial() %></p>
-    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Polinomio Inicial</th>
+            <th scope="col">Polinomio Organizado</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><%= entrada %>
+            </td>
+            <td><%= form.showPolynomial() %>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container fs-5">
     <div class="row align-items-center">
         <p class="col"><b>Forma: </b><span><%= form.showForm() %></span></p>
     </div>

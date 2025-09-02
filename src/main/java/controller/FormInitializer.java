@@ -19,11 +19,6 @@ public class FormInitializer {
         Polynomial result = null;
         PreparedPolynomial prepol = new PreparedPolynomial(this.polynomial);
 
-        System.out.println(form);
-        for (int i = 0; i < prepol.getPolynomial().length; i++) {
-            System.out.println(prepol.getPolynomial()[i]);
-        }
-
         result = switch (this.form) {
             case "form1" -> new Form1(prepol.getDegree(), prepol.getPolynomial());
             case "form2" -> new Form2(prepol.getDegree(), prepol.getPolynomial());

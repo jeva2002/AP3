@@ -79,12 +79,12 @@ public class Form2 extends Polynomial<Form2, int[]> {
             }
         }
 
-        if(!hasTerm){
+        if (!hasTerm) {
             newDU = super.DU + 2;
             newPolynomial = new int[newDU + 1];
 
             while (j <= super.DU) {
-                if(!addedTerm && exp > super.structure[j]){
+                if (!addedTerm && exp > super.structure[j]) {
                     newPolynomial[k] = exp;
                     newPolynomial[k - 1] = coef;
                     k += 2;
@@ -97,7 +97,7 @@ public class Form2 extends Polynomial<Form2, int[]> {
                 k += 2;
             }
 
-            if(!addedTerm){
+            if (!addedTerm) {
                 newPolynomial[k] = exp;
                 newPolynomial[k - 1] = coef;
             }
@@ -125,14 +125,14 @@ public class Form2 extends Polynomial<Form2, int[]> {
 
     @Override
     public String showForm() {
-        StringBuilder form = new StringBuilder(" 2 <br/> <b>DU:</b> " + this.DU + " <br/> <b>Número de Términos:</b> " + structure[0] + "<br/><ul class=\"list-group list-group-horizontal justify-content-center\">");
+        StringBuilder form = new StringBuilder(" 2 <br/> <b>DU:</b> " + this.DU + " <br/> <b>Número de Términos:</b> " + structure[0] + "<br/><ul class=\"list-group list-group-horizontal justify-content-center mb-2\">");
 
         for (int i = 2; i <= super.DU; i += 2) {
-            form.append("<li style=\"max-width:200px !important;\" class=\"list-group-item m-1\">").append("<b>Coeficiente:</b>  ").append(structure[i - 1]).append(", <b>Exponente:</b>  ").append(structure[i]).append("</li>");
+            form.append("<li style=\"width:200px !important;\" class=\"list-group-item\">").append("<b>Posición:</b> ").append(i).append("</li>");
+            form.append("<li style=\"width:200px !important;\" class=\"list-group-item\">").append("<b>Coeficiente:</b> ").append(structure[i - 1]).append("</li>");
+            form.append("<li style=\"width:200px !important;\" class=\"list-group-item\">").append("<b>Exponente:</b> ").append(structure[i]).append("</li>");
 
-            if (i % 4 == 0) {
-                form.append("</ul><ul class=\"list-group list-group-horizontal justify-content-center\">");
-            }
+            form.append("</ul><ul class=\"list-group list-group-horizontal justify-content-center mb-2\">");
         }
 
         return form.append("</ul>").toString();
@@ -230,7 +230,7 @@ public class Form2 extends Polynomial<Form2, int[]> {
                 vectorC[j] = vectorA[j] + vectorB[i];
             }
 
-            matrix[m] =  vectorC;
+            matrix[m] = vectorC;
             m++;
         }
 
