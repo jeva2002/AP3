@@ -1,4 +1,4 @@
-package model;
+package model.polinomios;
 
 public class Form2 extends Polynomial<Form2, int[]> {
     public Form2(int degree, int[] preparedPolynomial) {
@@ -128,7 +128,7 @@ public class Form2 extends Polynomial<Form2, int[]> {
         StringBuilder form = new StringBuilder(" 2 <br/> <b>DU:</b> " + this.DU + " <br/> <b>Número de Términos:</b> " + structure[0] + "<br/><ul class=\"list-group list-group-horizontal justify-content-center mb-2\">");
 
         for (int i = 2; i <= super.DU; i += 2) {
-            form.append("<li style=\"width:200px !important;\" class=\"list-group-item\">").append("<b>Posición:</b> ").append(i).append("</li>");
+            form.append("<li style=\"width:200px !important;\" class=\"list-group-item\">").append("<b>Posición:</b> ").append(i - 1).append("-").append(i).append("</li>");
             form.append("<li style=\"width:200px !important;\" class=\"list-group-item\">").append("<b>Coeficiente:</b> ").append(structure[i - 1]).append("</li>");
             form.append("<li style=\"width:200px !important;\" class=\"list-group-item\">").append("<b>Exponente:</b> ").append(structure[i]).append("</li>");
 

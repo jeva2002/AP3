@@ -1,4 +1,4 @@
-package model.Form3;
+package model.polinomios.Form3;
 
 public class Form3Node {
     private int coef, exp;

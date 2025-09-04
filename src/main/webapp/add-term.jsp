@@ -1,4 +1,4 @@
-<%@ page import="model.Polynomial" %><%--
+<%@ page import="model.polinomios.Polynomial" %><%--
   Created by IntelliJ IDEA.
   User: jvillegas
   Date: 25/08/2025

@@ -1,13 +1,13 @@
 package view;
 
-import controller.FormInitializer;
+import controller.polinomios.FormInitializer;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Polynomial;
+import model.polinomios.Polynomial;
 
 import java.io.IOException;
 

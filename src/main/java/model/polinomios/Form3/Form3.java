@@ -1,6 +1,6 @@
-package model.Form3;
+package model.polinomios.Form3;
 
-import model.Polynomial;
+import model.polinomios.Polynomial;
 
 public class Form3 extends Polynomial<Form3, Form3Node> {
     public Form3(int degree, int[] preparedPolynomial) {

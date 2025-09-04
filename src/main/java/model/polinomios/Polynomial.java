@@ -1,4 +1,4 @@
-package model;
+package model.polinomios;
 
 public abstract class Polynomial<Form, Entry> {
     protected int degree;

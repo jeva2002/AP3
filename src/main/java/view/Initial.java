@@ -1,6 +1,6 @@
 package view;
 
-import controller.FormInitializer;
+import controller.polinomios.FormInitializer;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

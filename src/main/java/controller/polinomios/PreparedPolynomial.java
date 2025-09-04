@@ -1,6 +1,5 @@
-package model;
+package controller.polinomios;
 
-import java.util.Arrays;
 import java.util.Objects;
 
 public class PreparedPolynomial {
@@ -9,7 +8,7 @@ public class PreparedPolynomial {
     private final int degree;
 
     public PreparedPolynomial(String input) {
-        this.input = input;
+        this.input = input.replace("-", "+-");
         this.degree = _getDegree();
         this.polynomial = new int[this.degree + 1];
 
@@ -20,7 +19,7 @@ public class PreparedPolynomial {
         boolean hasVariable;
         int coef, exp;
         String[] term, terms;
-        String cleanInput = input.replace("-", "+-");
+        String cleanInput = input;
 
         if(cleanInput.charAt(0) == '+') cleanInput = cleanInput.substring(1);
 
@@ -48,7 +47,6 @@ public class PreparedPolynomial {
 
     private int _getDegree() {
         int majorDegree = 0;
-        int exp;
         String[] polynomial, term;
 
         if(!input.contains("^")){
@@ -58,9 +56,15 @@ public class PreparedPolynomial {
             polynomial = input.split("\\+");
 
             for (int i = 0; i < polynomial.length; i++) {
+                System.out.println(polynomial[i]);
+            }
+
+            for (int i = 0; i < polynomial.length; i++) {
                 term = polynomial[i].split("\\^");
 
-                if(term.length == 2 && Integer.parseInt(term[1]) > majorDegree) majorDegree = Integer.parseInt(term[1]);
+                if(term.length == 2 && Integer.parseInt(term[1]) > majorDegree) {
+                    majorDegree = Integer.parseInt(term[1]);
+                };
             }
         }
 
