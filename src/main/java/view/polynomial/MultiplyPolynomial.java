@@ -1,18 +1,18 @@
-package view;
+package view.polynomial;
 
-import controller.polinomios.FormInitializer;
+import controller.polynomial.FormInitializer;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.polinomios.Polynomial;
+import model.polynomial.Polynomial;
 
 import java.io.IOException;
 
-@WebServlet(name = "add-polynomial", value = "/add-polynomial")
-public class AddPolynomial extends HttpServlet {
+@WebServlet(name = "multiply-polynomial", value = "/multiply-polynomial")
+public class MultiplyPolynomial extends HttpServlet {
     public void init() {
     }
 
@@ -25,7 +25,7 @@ public class AddPolynomial extends HttpServlet {
         FormInitializer initializer = new FormInitializer(form.getFormName(), polynomial);
         Polynomial form2 = initializer.initForm();
 
-        Polynomial form3 = (Polynomial) form.addPolynomial(form2);
+        Polynomial form3 = (Polynomial) form.multiplyPolynomial(form2);
 
         context.setAttribute("Form2", form2);
         context.setAttribute("Form3", form3);

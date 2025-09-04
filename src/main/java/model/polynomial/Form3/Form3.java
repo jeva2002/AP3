@@ -1,8 +1,9 @@
-package model.polinomios.Form3;
+package model.polynomial.Form3;
 
-import model.polinomios.Polynomial;
+import model.polynomial.Polynomial;
 
 public class Form3 extends Polynomial<Form3, Form3Node> {
+
     public Form3(int degree, int[] preparedPolynomial) {
         super(degree, preparedPolynomial);
         this.form = "form3";
@@ -119,8 +120,12 @@ public class Form3 extends Polynomial<Form3, Form3Node> {
     public String showForm() {
         StringBuilder form = new StringBuilder(" 3 <br> <b>DU (Número de Nodos):</b> " + super.DU + "<br><ul class=\"list-group list-group-horizontal justify-content-center mb-2\">");
         Form3Node auxNode = this.structure;
+        int count = 0;
 
         while (auxNode != null) {
+            count++;
+
+            form.append("<li style=\"width:200px !important;\" class=\"list-group-item\">").append("<b>Nodo:</b> ").append(count).append("</li>");
             form.append("<li style=\"width:200px !important;\" class=\"list-group-item\">").append("<b>Coeficiente:</b> ").append(auxNode.getCoef()).append("</li>");
             form.append("<li style=\"width:200px !important;\" class=\"list-group-item\">").append("<b>Exponente:</b> ").append(auxNode.getExp()).append("</li>");
 

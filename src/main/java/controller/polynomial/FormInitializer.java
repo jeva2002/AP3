@@ -1,9 +1,9 @@
-package controller.polinomios;
+package controller.polynomial;
 
-import model.polinomios.Form1;
-import model.polinomios.Form2;
-import model.polinomios.Form3.Form3;
-import model.polinomios.Polynomial;
+import model.polynomial.Form1;
+import model.polynomial.Form2;
+import model.polynomial.Form3.Form3;
+import model.polynomial.Polynomial;
 
 public class FormInitializer {
     String form;

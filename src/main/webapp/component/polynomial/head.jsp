@@ -9,6 +9,6 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>Polinomios</title>
-    <link href="./css/bootstrap.css" rel="stylesheet">
-    <script src="./js/bootstrap.js" type="text/javascript"></script>
+    <link href="<%= request.getContextPath() %>/css/bootstrap.css" rel="stylesheet">
+    <script src="<%= request.getContextPath() %>/js/bootstrap.js" type="text/javascript"></script>
 </head>

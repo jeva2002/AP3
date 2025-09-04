@@ -1,4 +1,4 @@
-package view;
+package view.polynomial;
 
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
@@ -6,7 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.polinomios.Polynomial;
+import model.polynomial.Polynomial;
 
 import java.io.IOException;
 
@@ -24,6 +24,6 @@ public class AddTerm extends HttpServlet {
 
         form.insertTerm(coef, exp);
 
-        response.sendRedirect("describe.jsp");
+        response.sendRedirect("describe-polynomial.jsp");
     }
 }

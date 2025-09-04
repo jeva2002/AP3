@@ -1,4 +1,4 @@
-<%@ page import="model.polinomios.Polynomial" %><%--
+<%@ page import="model.polynomial.Polynomial" %><%--
   Created by IntelliJ IDEA.
   User: jvillegas
   Date: 25/08/2025
@@ -10,11 +10,11 @@
     Polynomial form = (Polynomial) application.getAttribute("Form");
 %>
 <html>
-<%@ include file="component/head.jsp" %>
+<%@ include file="component/polynomial/head.jsp" %>
 <body>
-<%@ include file="component/nav.jsp" %>
+<%@ include file="component/polynomial/nav.jsp" %>
 <h1 class="container-fluid text-center my-5 ">Evaluar Polinomios</h1>
-<form class="container px-5 fs-5" action="<%= request.getContextPath() %>/eval" method="post">
+<form class="container px-5 fs-5" action="<%= request.getContextPath() %>/eval-polynomial" method="post">
     <div class="row align-items-center">
         <p class="col"><b>Polinomio: </b><%= form.showPolynomial() %></p>
     </div>

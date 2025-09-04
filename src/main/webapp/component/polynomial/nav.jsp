@@ -15,11 +15,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/describe.jsp">Descripción</a>
+                <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/describe-polynomial.jsp">Descripción</a>
                 <a class="nav-link" href="${pageContext.request.contextPath}/eval-polynomial.jsp">Evaluar</a>
                 <a class="nav-link" href="${pageContext.request.contextPath}/add-polynomial.jsp">Sumar Polinomio</a>
-                <a class="nav-link" href="${pageContext.request.contextPath}/multiply-polynomial.jsp">Multiplicar
-                    Polinomio</a>
+                <a class="nav-link" href="${pageContext.request.contextPath}/multiply-polynomial.jsp">Multiplicar Polinomio</a>
                 <a class="nav-link" href="${pageContext.request.contextPath}/add-term.jsp">Añadir Término</a>
                 <a class="nav-link" href="${pageContext.request.contextPath}/delete-term.jsp">Eliminar Término</a>
                 <a class="nav-link" href="${pageContext.request.contextPath}/">Volver a Iniciar</a>

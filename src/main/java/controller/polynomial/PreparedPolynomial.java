@@ -1,4 +1,4 @@
-package controller.polinomios;
+package controller.polynomial;
 
 import java.util.Objects;
 
@@ -78,9 +78,5 @@ public class PreparedPolynomial {
 
     public int[] getPolynomial() {
         return polynomial;
-    }
-
-    public int[] getTerm() {
-        return new int[]{polynomial[polynomial.length - 1], this.degree};
     }
 }

@@ -1,4 +1,4 @@
-<%@ page import="model.polinomios.Polynomial" %><%--
+<%@ page import="model.polynomial.Polynomial" %><%--
   Created by IntelliJ IDEA.
   User: jvillegas
   Date: 25/08/2025
@@ -11,9 +11,9 @@
     String evaluated = (String) application.getAttribute("evaluation");
 %>
 <html>
-<%@ include file="component/head.jsp" %>
+<%@ include file="component/polynomial/head.jsp" %>
 <body>
-<%@ include file="component/nav.jsp" %>
+<%@ include file="component/polynomial/nav.jsp" %>
 <h1 class="container-fluid text-center my-5 ">Resultado Evaluación Polinomios</h1>
 <div class="container fs-5">
     <div class="row align-items-center">

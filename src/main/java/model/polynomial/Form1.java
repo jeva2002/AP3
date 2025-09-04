@@ -1,4 +1,4 @@
-package model.polinomios;
+package model.polynomial;
 
 public class Form1 extends Polynomial<Form1, int[]> {
     public Form1(int degree, int[] preparedPolynomial) {

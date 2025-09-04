@@ -1,6 +1,6 @@
-package view;
+package view.polynomial;
 
-import controller.polinomios.FormInitializer;
+import controller.polynomial.FormInitializer;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -32,7 +32,7 @@ public class Initial extends HttpServlet {
         context.setAttribute("Entry", polinomio);
         context.setAttribute("Form", initializer.initForm());
 
-        response.sendRedirect("describe.jsp");
+        response.sendRedirect("describe-polynomial.jsp");
     }
 
     public void destroy() {
