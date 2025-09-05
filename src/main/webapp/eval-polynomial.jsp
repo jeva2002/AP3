@@ -22,7 +22,7 @@
     <div class="row mt-2">
         <div class="col">
             <label for="value" class="form-label"> X = </label>
-            <input class="form-control" type="number" id="value" name="value" required/>
+            <input class="form-control" type="number" id="value" name="value" placeholder="1" required/>
         </div>
     </div>
 

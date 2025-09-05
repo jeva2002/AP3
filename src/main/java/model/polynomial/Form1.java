@@ -106,7 +106,7 @@ public class Form1 extends Polynomial<Form1, int[]> {
         StringBuilder form = new StringBuilder(" 1 <br> <b>DU (Grado):</b> " + structure[0] + "<br><ul class=\"list-group list-group-horizontal justify-content-center\">");
 
         for (int i = 1; i <= super.DU; i++) {
-            form.append("<li style=\"width:200px !important;\" class=\"list-group-item mb-2\">")
+            form.append("<li style=\"width:200px !important;\" class=\"list-group-item mb-2 " + (structure[i] != 0 ? "bg-primary" : "") + " \">")
                     .append("<b>Posición: </b>").append(i).append("<br/>")
                     .append("<b>Exponente: </b>").append(super.DU - i).append("<br/>")
                     .append("<b>Coeficiente: </b>").append(structure[i])

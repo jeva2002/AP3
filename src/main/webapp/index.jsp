@@ -24,7 +24,7 @@
         <div class="row my-5">
             <div class="col">
                 <label for="polinomio" class="form-label"> Polinomio </label>
-                <input class="form-control" type="text" id="polinomio" name="polinomio" required/>
+                <input class="form-control" type="text" id="polinomio" name="polinomio" required placeholder="1x^100 - 1x^50 + 1x^25 - 1x^10 + 1x - 1"/>
             </div>
             <div class="col">
                 <label for="form"> Forma</label>

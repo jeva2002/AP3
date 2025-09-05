@@ -22,7 +22,7 @@
     <div class="row mt-2">
         <div class="col">
             <label for="polinomio" class="form-label"> Polinomio B</label>
-            <input class="form-control" type="text" id="polinomio" name="polinomio" required/>
+            <input class="form-control" type="text" id="polinomio" name="polinomio" placeholder="1x^100 - 1x^50 + 1x^25 - 1x^10 + 1x - 1" required/>
         </div>
     </div>
 

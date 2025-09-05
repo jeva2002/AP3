@@ -22,11 +22,11 @@
     <div class="row mt-2">
         <div class="col">
             <label for="coef" class="form-label"> Coeficiente </label>
-            <input class="form-control" type="number" id="coef" name="coef" required/>
+            <input class="form-control" type="number" id="coef" name="coef" required placeholder="1"/>
         </div>
         <div class="col">
             <label for="exp" class="form-label"> Exponente </label>
-            <input class="form-control" type="number" id="exp" name="exp" required min="0"/>
+            <input class="form-control" type="number" id="exp" name="exp" required min="0" placeholder="1"/>
         </div>
     </div>
 
