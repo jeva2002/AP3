@@ -20,7 +20,7 @@
         <thead>
         <tr>
             <th scope="col">Polinomio Inicial</th>
-            <th scope="col">Polinomio Organizado</th>
+            <th scope="col">Polinomio Actual</th>
         </tr>
         </thead>
         <tbody>

@@ -8,7 +8,9 @@ public class PreparedPolynomial {
     private final int degree;
 
     public PreparedPolynomial(String input) {
-        this.input = input.replace("-", "+-");
+        this.input = input.trim().replace(" ", "").replace("-", "+-");
+
+        System.out.println(input);
         this.degree = _getDegree();
         this.polynomial = new int[this.degree + 1];
 
@@ -21,7 +23,7 @@ public class PreparedPolynomial {
         String[] term, terms;
         String cleanInput = input;
 
-        if(cleanInput.charAt(0) == '+') cleanInput = cleanInput.substring(1);
+        if (cleanInput.charAt(0) == '+') cleanInput = cleanInput.substring(1);
 
         terms = cleanInput.split("[+]");
 
@@ -34,9 +36,9 @@ public class PreparedPolynomial {
             else
                 coef = Integer.parseInt(term[0].replace("x", ""));
 
-            if(term.length == 2)
+            if (term.length == 2)
                 exp = Integer.parseInt(term[1]);
-            else if(hasVariable)
+            else if (hasVariable)
                 exp = 1;
             else
                 exp = 0;
@@ -49,22 +51,19 @@ public class PreparedPolynomial {
         int majorDegree = 0;
         String[] polynomial, term;
 
-        if(!input.contains("^")){
-            if(input.contains("x"))
+        if (!input.contains("^")) {
+            if (input.contains("x"))
                 majorDegree = 1;
         } else {
             polynomial = input.split("\\+");
 
             for (int i = 0; i < polynomial.length; i++) {
-                System.out.println(polynomial[i]);
-            }
-
-            for (int i = 0; i < polynomial.length; i++) {
                 term = polynomial[i].split("\\^");
 
-                if(term.length == 2 && Integer.parseInt(term[1]) > majorDegree) {
+                if (term.length == 2 && Integer.parseInt(term[1]) > majorDegree) {
                     majorDegree = Integer.parseInt(term[1]);
-                };
+                }
+                ;
             }
         }
 

@@ -78,23 +78,24 @@ public class Form3 extends Polynomial<Form3, Form3Node> {
             this.structure = newNode;
             this.DU += 1;
             this.degree = newNode.getExp();
+        } else {
+            while (auxNode != null) {
+                if (auxNode.getExp() == exp) {
+                    auxNode.setCoef(auxNode.getCoef() + coef);
+                } else if (auxNode.getExp() > exp && (auxNode.getNext() == null || auxNode.getNext().getExp() < exp)) {
+                    newNode = new Form3Node(coef, exp);
+                    newNode.setNext(auxNode.getNext());
+                    auxNode.setNext(newNode);
+                    auxNode = auxNode.getNext();
 
-            return;
-        }
+                    this.DU += 1;
+                }
 
-        while (auxNode != null) {
-            if (auxNode.getExp() == exp) {
-                auxNode.setCoef(auxNode.getCoef() + coef);
-            } else if (auxNode.getExp() > exp && (auxNode.getNext() == null || auxNode.getNext().getExp() < exp)) {
-                newNode = new Form3Node(coef, exp);
-                newNode.setNext(auxNode.getNext());
-                auxNode.setNext(newNode);
+                auxNode = auxNode.getNext();
             }
 
             adjust();
             resize();
-
-            auxNode = auxNode.getNext();
         }
     }
 
