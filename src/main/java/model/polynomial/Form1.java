@@ -103,7 +103,7 @@ public class Form1 extends Polynomial<Form1, int[]> {
 
     @Override
     public String showForm() {
-        StringBuilder form = new StringBuilder(" 1 <br> <b>DU (Grado):</b> " + structure[0] + "<br><ul class=\"list-group list-group-horizontal justify-content-center\">");
+        StringBuilder form = new StringBuilder(" 1 <br/> <b>DU (Grado):</b> " + structure[0] + "<br/><ul class=\"list-group list-group-horizontal justify-content-center\">");
 
         for (int i = 1; i <= super.DU; i++) {
             form.append("<li style=\"width:200px !important;\" class=\"list-group-item mb-2 " + (structure[i] != 0 ? "bg-primary" : "") + " \">")
@@ -117,7 +117,11 @@ public class Form1 extends Polynomial<Form1, int[]> {
             }
         }
 
-        return form.append("</ul>").toString();
+        form.append("</ul>");
+
+        Form2 form2 = Form2.Form1ToForm2(this);
+
+        return form.append("<br/> <b>Forma </b>").append(form2.showForm()).toString();
     }
 
     @Override

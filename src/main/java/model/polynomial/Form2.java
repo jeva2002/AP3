@@ -277,6 +277,34 @@ public class Form2 extends Polynomial<Form2, int[]> {
         return new Form2[]{primary, secondary};
     }
 
+    static public Form2 Form1ToForm2(Form1 form1){
+        Form2 form2;
+        String stream = "";
+        String[] vectorStream;
+        int[] vector;
+        int count = 0;
+
+        for (int i = 1; i <= form1.DU; i++) {
+            if(form1.structure[i] != 0){
+                stream += form1.structure[i] + ",";
+                stream += (form1.DU - i) + ",";
+                count++;
+            }
+        }
+
+        stream = count * 2 + "," + stream;
+        vectorStream = stream.split(",");
+        vector = new int[vectorStream.length];
+
+        for (int i = 0; i < vectorStream.length; i++) {
+            vector[i] = Integer.parseInt(vectorStream[i]);
+        }
+        System.out.println(count);
+        form2 = new Form2(count * 2, vector[2], vector);
+
+        return form2;
+    }
+
     @Override
     public int[] getStructure() {
         return structure;
